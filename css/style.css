@@ -24,7 +24,7 @@ p {
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -15px;
+    margin: 0 15px;
 
 }
 
@@ -68,22 +68,22 @@ header .container {
     content: "";
     position: absolute;
     width: 100%;
-    height: 2px;
+    height: 3px;
     background: #fff;
     left: 0;
-    bottom: -30px;
+    bottom: -50px;
     transform: scale(0);
-    transition: 0.5s;
+    transition: .5s;
 }
 
-.top-menu a:hover {
-    transition: .5s;
+.top-menu a:hover::before{
     transform: scale(1);
+    transition: .5s;
 }
 
 
 #hero {
-    background: url(./img/preview.png) center/cover;
+    background: url(../img/preview.png) center/cover;
     display: flex;
 }
 
@@ -145,10 +145,19 @@ header .container {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
 }
 
 .services-icon:before {
+    content: '';
+    position: absolute;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    width: 110px;
+    height: 110px;
+    border-radius: 60px;
+
 }
 
 .services-icon-header {
@@ -296,6 +305,9 @@ header .container {
 #about-us {
     background: #F6F6F8;
 }
+#about-us .img{
+   background: url("../img/about-us.png") center/cover;
+}
 
 #about-us .container {
     padding: 100px 0 70px;
@@ -329,7 +341,6 @@ header .container {
 .about-us-icon {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -15px;
     text-align: center;
 }
 
@@ -346,7 +357,7 @@ header .container {
 
 #video {
     height: 570px;
-    background: url("./img/bg.png") center/cover;
+    background: url("../img/bg.png") center/cover;
     position: relative;
 }
 
@@ -373,7 +384,7 @@ header .container {
 .play {
     height: 430px;
     max-width: 970px;
-    background: url("./img/play-bg.png") center/cover;
+    background: url("../img/play-bg.png") center/cover;
     position: absolute;
     left: 0;
     right: 0;
@@ -428,23 +439,28 @@ header .container {
 .subcribe-desc {
     padding-bottom: 30px;
 }
-
 .email {
     background: #FFFFFF;
-    width: 299px;
+    width: 489px;
     height: 45px;
     border: 1px solid #F2F2F2;
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(111, 111, 111, 0.25);
-    border-radius: 30px 0 0 30px;
     padding: 0 100px 0 30px;
-    margin-right: -13px;
+    border-radius: 30px;
+    position: relative;
+    right: 0;
+    left: 0;
+    margin: auto;
 }
 
 #subcribe .btn {
+
     border-radius: 0 30px 30px 0;
+    margin-left: -190px;
     width: 190px;
-    height: 45px;
+    height: 44px;
+    position: absolute;
 }
 
 .form-desc {
@@ -454,6 +470,11 @@ header .container {
 .footer-icon {
     display: flex;
     align-items: center;
+    text-decoration: none;
+    padding-bottom: 30px;
+}
+.footer-links{
+    display: inline-block;
 }
 
 .footer-title {
@@ -469,10 +490,6 @@ header .container {
     padding-left: 15px;
 }
 
-.footer-icon {
-    padding-bottom: 30px;
-}
-
 .footer-bottom {
     text-align: center;
     font-size: 13px;
@@ -480,63 +497,18 @@ header .container {
     margin: 30px auto;
 }
 
-
-@media (max-width: 1160px) {
-    .container{
-        width: 100%;
-    }
-    header{
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    .col-4{
-        width: 100%;
-        margin: 0;
-        margin-bottom: 30px;
-        padding-left: 15px;
-        padding-right: 15px;
-        text-align: center;
-
-    }
-    .col-5{
-        width: 100%;
-        margin: 0;
-        margin-bottom: 30px;
-        padding-left: 15px;
-        padding-right: 15px;
-        text-align: center;
-
-    }
-    .col-3{
-        width: 50%;
-        margin: 0;
-        margin-bottom: 30px;
-        padding-left: 15px;
-        padding-right: 15px;
-        text-align: center;
-
-    }
-    .col-2{
-        width: 50%;
-        margin: 0;
-        margin-bottom: 30px;
-        padding-left: 15px;
-        padding-right: 15px;
-        text-align: center;
-
-    }
-
-}
-.burger{
+.burger {
     display: none;
     width: 50px;
     height: 40px;
     background: #4589ff;
 
     align-items: center;
-    justify-content: center;   padding: 5px;
+    justify-content: center;
+    padding: 5px;
 }
-.burger span{
+
+.burger span {
     width: 100%;
     height: 3px;
     background: black;
@@ -544,7 +516,8 @@ header .container {
     position: relative;
 
 }
-.burger span:before{
+
+.burger span:before {
     content: '';
     position: absolute;
     left: 0;
@@ -553,7 +526,8 @@ header .container {
     height: 100%;
     background: black;
 }
-.burger span:after{
+
+.burger span:after {
     content: '';
     position: absolute;
     left: 0;
@@ -563,46 +537,26 @@ header .container {
     background: black;
 
 }
-.show-menu span:before{
+
+.show-menu span:before {
     transform: rotate(-40deg);
 
 }
-.show-menu span:after{
-    transform: rotate(40deg);}
+
+.show-menu span:after {
+    transform: rotate(40deg);
+}
+
 .show-menu span:before,
-.show-menu span:after{
+.show-menu span:after {
     top: 0;
     bottom: 0;
     margin: auto;
 
 }
-.show-menu span{
+
+.show-menu span {
     background: transparent;
 }
-@media (max-width: 992px) {
-    .burger {
-        display: flex;
-    }
 
-    .top-menu {
-        display: none;
-    }
 
-    .top-menu.show {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        background: #999999;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        align-items: center;
-        justify-content: center;
-        z-index: 2;
-    }
-    .top-menu.show a{
-        margin:10px 0 0;
-
-    }
-}
